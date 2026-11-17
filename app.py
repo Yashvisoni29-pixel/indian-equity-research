@@ -1,25 +1,4 @@
-python
 import streamlit as st
-import yfinance as yf
-import pandas as pd
-st.set_page_config(page_title="indian equity research",layout="wide")
-st.title("indian equity research dashboard")
-st.subheader("stock market analysis & performance")
-st.write("analyze indian listed companies using market data.")
-ticker = st.text_input("enter NSE stock symbol","RELIANCE.NS")
-Period = st. selectbox("select analysis period",["1mo","3mo","6mo","1y","2y","5y"], index =3)
-if st.button("analyze stock"):
-  with st.spinner("fetching stock market data..."):
-    stock = yf ticker (ticker.strip().upper())
-    data = stock.history(period=period)
-  if data.empty:
-    st.error("no data found. check the stock symbol.")
-  else:
-    data = data.dropna( subnet=["close"])
-    latest = float(data["close"].iloc[-1])
-    previous = (
-      float(data
-    import streamlit as st
 import yfinance as yf
 import pandas as pd
 
